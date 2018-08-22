@@ -43,4 +43,4 @@ INSERT INTO `testAuthors` VALUES ('1','Vincent','Lemke','rebekah52@example.com',
 ('26','Madie','Wiza','humberto.wuckert@example.org','1989-02-26','2007-11-05 08:39:34'),
 ('27','Lula','Hamill','schoen.jeanette@example.net','2007-11-09','1998-10-18 15:02:11'),
 ('28','Kyleigh','Block','nora.dubuque@example.net','2016-01-06','2010-07-04 16:15:13'),
-('29','Marie','Trantow','sheldon30@example.net','1993-07-15','1994-11-20 08:29:51');
+('29','Marie','Trantow','sheldon30@example.net','1993-07-15',current_timestamp());
