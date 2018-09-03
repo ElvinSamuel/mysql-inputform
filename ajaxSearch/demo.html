@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang='en'>
+    <head>
+        <title>Demo</title>
+    </head>
+    
+    <body>
+        <form role='form' method='POST'>
+            <input type="text" class='form-control' id='keyword' placeholder='Enter Keyword' name=""/>
+            <!--<input type="submit" value="Submit"/>-->
+        </form>
+        
+        <ul id='content'></ul>
+        
+        <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+        <script type="text/javascript">
+            
+            $(document).ready(function(){
+                $('#keyword').on('input', function(){
+                    var searchKeyword = $(this).val();
+                    if (searchKeyword.length >= 3) {
+                        $.post('search.php', { keywords: searchKeyword }, function(data){
+                            $('ul#content').empty()
+                            $.each(data, function(){
+                                $('ul#content').append('<li><a href="example.php?id=' + this.id + '">' + this.title + '</a></li>')
+                            });
+                        }, "json");
+                    }
+                });
+            });
+            
+        </script>
+    </body>
+</html>
